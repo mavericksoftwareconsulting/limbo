@@ -16,6 +16,6 @@ ADD . /app
 WORKDIR /app
 RUN pip install -e .
 RUN pip install -r requirements.txt --no-compile
-CMD /app/bin/kube-limbo
+CMD /app/bin/limbo
 
 # vim: set expandtab tabstop=4 shiftwidth=4 autoindent smartindent:

@@ -29,7 +29,7 @@ def on_message(msg, server):
     if not match:
         return
 
-    return decide_food()
+    return "This is not working currently"
 
 
 on_bot_message = on_message

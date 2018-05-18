@@ -327,13 +327,13 @@ def main(args):
         server.slack.rtm_connect()
         # run init hook. This hook doesn't send messages to the server (ought it?)
         run_hook(server.hooks, "init", server)
-
+        print("Server is now running")
         loop(server)
     except SlackConnectionError:
         logger.warn("Unable to connect to Slack. Bad network?")
         raise
     except SlackLoginError:
-        logger.warn("Login Failed, invalid token <{0}>?".format(
+        logger.warn("Login Failed, invalid token <{0}>".format(
             config["token"]))
         raise
 
