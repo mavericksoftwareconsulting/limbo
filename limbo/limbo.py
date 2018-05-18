@@ -134,7 +134,7 @@ def get_user_id_from_message(msg, msgtype):
     except KeyError:
         return None
 
-
+# TODO: Add permissions here
 def handle_message(event, server):
     # plain mesages don't have a subtype; message_changed, bot_message,
     # message_deleted et al do. use the subtype if available, otherwise
@@ -202,6 +202,9 @@ def loop(server, test_loop=None):
             for event in events:
                 loops_without_activity = 0
                 logger.debug("got {0}".format(event))
+
+
+
                 response = handle_event(event, server)
 
                 # The docs (https://api.slack.com/docs/message-threading)
