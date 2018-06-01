@@ -23,6 +23,7 @@ PYTHON3 = sys.version_info[0] > 2
 
 logger = logging.getLogger(__name__)
 
+admins = []
 
 class InvalidPluginDir(Exception):
     def __init__(self, plugindir):
@@ -309,7 +310,13 @@ def encode(str_, codec='utf8'):
     else:
         return str_.encode(codec)
 
-
+def init_permissions():
+    global admins 
+    file = open('../app/limbo/adminlist.txt', 'r')
+    for userID in file:
+        admins += userID
+        logger.debug("UserID: {0} was added to the admin list.".format(userID))
+       
 def main(args):
     config = init_config()
     if args.test:
@@ -325,6 +332,8 @@ def main(args):
         return
 
     server = init_server(args, config)
+
+    init_permissions()
 
     try:
         server.slack.rtm_connect()
