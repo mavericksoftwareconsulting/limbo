@@ -15,6 +15,10 @@ test: install
 clean:
 	rm -rf build dist limbo.egg-info
 
+.PHONY: build
+build: 
+	tar -cvf ../limbo.tar .
+
 .PHONY: run
 run: install
 	bin/limbo
