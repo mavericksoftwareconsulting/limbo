@@ -1,0 +1,13 @@
+/*
+ Put the commands that you want specific permissions for into this file.
+ Commands put here will only be usable by the specified users.
+ Commands not present here will be considered "public"
+
+ The structure is as such:
+ "command": ["userID", "userID", "userID", ...]
+ */
+{
+	"food": ["U62D181L6"],
+	"next": ["U62D181L6"],
+	"mute": ["U62D181L6"]
+}
