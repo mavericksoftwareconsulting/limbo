@@ -310,9 +310,10 @@ def encode(str_, codec='utf8'):
     else:
         return str_.encode(codec)
 
+# This is the start to the permissions for the bot. It is not functional yet.
 def init_permissions():
     global admins 
-    file = open('../app/limbo/adminlist.txt', 'r')
+    file = open('adminlist.txt', 'r')
     for userID in file:
         admins += userID
         logger.debug("UserID: {0} was added to the admin list.".format(userID))
