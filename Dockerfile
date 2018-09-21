@@ -12,6 +12,9 @@ RUN apk add --update python3 python3-dev vim bash    \
     && ln -s /usr/bin/python3 /usr/bin/python   \
     && mkdir -p /opt /app
 
+# Set the url-hostname for the Mopidy server. Allows us to use mpc commands
+ENV MPD_HOST 192.168.220.147 
+
 ADD . /app
 WORKDIR /app
 RUN pip install -e .

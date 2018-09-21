@@ -303,7 +303,7 @@ def decode(str_, codec='utf8'):
         return str_.decode(codec)
 
 
-# encode a string. if str is a python 3 string, do nothing.
+# encode a string. if str is a Python3 string, do nothing.
 def encode(str_, codec='utf8'):
     if PYTHON3:
         return str_
